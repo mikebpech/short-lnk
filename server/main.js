@@ -1,7 +1,22 @@
 import { Meteor } from 'meteor/meteor';
-import { Links } from './../imports/api/links';
+import { WebApp } from 'meteor/webapp';
+
+import { Links } from '../imports/api/links';
 import '../imports/api/users';
+import '../imports/startup/simple-schema-configuration';
 
 Meteor.startup(() => {
-  
+
+  WebApp.connectHandlers.use((req, res, next) => {
+    const _id = req.url.slice(1);
+    const link = Links.findOne({ _id });
+    //If link is found in db.. redirect to assosicated URL.
+    if (link) {
+      res.statusCode = 302;
+      res.setHeader('Location', link.url);
+      res.end();
+    } else {
+      next();
+    }
+  });
 });

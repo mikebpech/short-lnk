@@ -6,16 +6,12 @@ Accounts.validateNewUser((user) => {
   const email = user.emails[0].address;
 
   //Validate if email is valid email.
-  try {
-    new SimpleSchema({
-      email: {
-        type: String,
-        regEx: SimpleSchema.RegEx.Email
-      }
-    }).validate({ email });
-  } catch (e) {
-    throw new Meteor.Error(400, e.message);
-  }
+  new SimpleSchema({
+    email: {
+      type: String,
+      regEx: SimpleSchema.RegEx.Email
+    }
+  }).validate({ email });
 
   return true;
 });
