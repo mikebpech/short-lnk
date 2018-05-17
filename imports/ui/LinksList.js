@@ -38,7 +38,7 @@ export default class LinksList extends React.Component {
 
     return this.state.links.map((link) => {
 
-      const shortUrl = Meteor.absoluteUrl(link._id)
+      const shortUrl = `https://tiltedtowers.io/${link._id}`
       //  '...link' spreads every parameter into a prop.
       return <LinksListItem key={link._id} {...link} shortUrl={shortUrl}/>
       // return <p key={link._id}>{link.url}</p>
