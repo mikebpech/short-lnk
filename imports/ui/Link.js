@@ -8,10 +8,12 @@ import LinksListFilter from './LinksListFilter';
 export default () => {
   return (
     <div>
-      <PrivateHeader title="Your Links"/>
-      <LinksListFilter/>
-      <AddLink/>
-      <LinksList/>
+      <PrivateHeader title="exWARE.Lnks"/>
+      <div className="page-content">
+        <LinksListFilter/>
+        <AddLink/>
+        <LinksList/>
+      </div>
     </div>
   );
 }

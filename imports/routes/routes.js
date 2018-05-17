@@ -38,7 +38,7 @@ const routes = (
     <Route path="/" component={Login} onEnter={onEnterPublicPage}/>
     <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>  
     <Route path="/links" component={Link} onEnter={onEnterPrivatePage}/>
-    <Route path="*" component={NotFound} onEnter={onEnterPrivatePage}/>
+    <Route path="*" component={NotFound} onEnter={onEnterPublicPage}/>
   </Router>
 );
 
