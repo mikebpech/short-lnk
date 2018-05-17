@@ -9,7 +9,6 @@ import '../imports/startup/simple-schema-configuration';
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
   onAuthChange(isAuthenticated);
-  console.log('Is Authenticated:', isAuthenticated);
 });
 
 Meteor.startup(() => {
